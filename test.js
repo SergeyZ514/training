@@ -1,9 +1,15 @@
 "use strict";
 
-let obj = {
-  name: "John",
-  age: 30,
-};
+let visitedSet = new WeakSet();
 
-let map = new Map(Object.entries(obj));
-console.log(map);
+let john = { name: "John" };
+let pete = { name: "Pete" };
+let mary = { name: "Mary" };
+
+visitedSet.add(john); // John заходил к нам
+visitedSet.add(pete); // потом Pete
+
+// visitedSet сейчас содержит двух пользователей
+
+// john = null;
+console.log(visitedSet);
