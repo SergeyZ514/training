@@ -1,15 +1,14 @@
 "use strict";
 
-let visitedSet = new WeakSet();
+let prices = {
+  banana: 1,
+  orange: 2,
+  meat: 4,
+};
 
-let john = { name: "John" };
-let pete = { name: "Pete" };
-let mary = { name: "Mary" };
+let doublePrices = Object.fromEntries(
+  // преобразовать в массив, затем map, затем fromEntries обратно объект
+  Object.entries(prices).map(([key, value]) => [key, value * 2]),
+);
 
-visitedSet.add(john); // John заходил к нам
-visitedSet.add(pete); // потом Pete
-
-// visitedSet сейчас содержит двух пользователей
-
-// john = null;
-console.log(visitedSet);
+console.log(doublePrices.meat); // 8
