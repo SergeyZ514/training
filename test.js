@@ -1,21 +1,16 @@
-"use strict";
+function makeCounter() {
+  // вместо
+  // let count = 0
 
-let room = {
-  number: 23,
-};
+  function counter() {
+    return counter.count++;
+  }
 
-let meetup = {
-  title: "Conference",
-  participants: [{ name: "John" }, { name: "Alice" }],
-  place: room, // meetup ссылается на room
-};
+  counter.count = 0;
 
-room.occupiedBy = meetup; // room ссылается на meetup
+  return counter;
+}
 
-let object1 = JSON.stringify(meetup, function replacer(key, value) {
-  return key == "occupiedBy" ? undefined : value;
-});
-
-console.log(object1);
-object1 = object1.toString();
-console.log(object1);
+let counter = makeCounter();
+console.log(counter()); // 0
+console.log(counter()); // 1
