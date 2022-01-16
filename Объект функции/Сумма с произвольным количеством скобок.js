@@ -1,11 +1,18 @@
 "use strict";
 
 function sum(a) {
-  let current = (b) => sum(a + b);
+  let currentSum = a;
 
-  current.toString = () => a;
+  function f(b) {
+    currentSum += b;
+    return f;
+  }
 
-  return current;
+  f.toString = function () {
+    return currentSum;
+  };
+
+  return f;
 }
 
 console.log(sum(1)(2));

@@ -1,16 +1,10 @@
-function makeCounter() {
-  // вместо
-  // let count = 0
+let start = Date.now();
+let times = [];
 
-  function counter() {
-    return counter.count++;
-  }
+setTimeout(function run() {
+  times.push(Date.now() - start); // запоминаем задержку от предыдущего вызова
 
-  counter.count = 0;
-
-  return counter;
-}
-
-let counter = makeCounter();
-console.log(counter()); // 0
-console.log(counter()); // 1
+  if (start + 100 < Date.now()) console.log(times);
+  // показываем задержку через 100 мс
+  else setTimeout(run); // если нужно ещё запланировать
+});
