@@ -1,5 +1,11 @@
-function hash() {
-  console.log([].join.call(arguments)); // 1,2
+"use strict";
+
+function f() {
+  console.log(this); // null
 }
 
-hash(1, 2);
+let user = {
+  g: f(null),
+};
+
+user.g();
