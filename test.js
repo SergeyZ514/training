@@ -1,17 +1,14 @@
 let animal = {
-  jumps: null,
+  eat() {
+    console.log("Eat");
+  },
 };
+
 let rabbit = {
   __proto__: animal,
-  jumps: true,
+  eat: function () {
+    super.eat();
+  },
 };
 
-alert(rabbit.jumps); // ? (1) true
-
-delete rabbit.jumps;
-
-alert(rabbit.jumps); // ? (2)   null
-
-delete animal.jumps;
-
-alert(rabbit.jumps); // ? (3) undefined
+rabbit.eat();
