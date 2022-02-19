@@ -13,11 +13,6 @@
   return shooters;
 } */
 
-let army = makeArmy();
-
-army[0]();
-army[5]();
-
 function makeArmy() {
   let shooters = [];
 
@@ -33,3 +28,8 @@ function makeArmy() {
 
   return shooters;
 }
+
+let army = makeArmy();
+
+army[0]();
+army[5]();
