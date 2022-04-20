@@ -1,4 +1,4 @@
-window.addEventListener("DOMContentLoaded", () => {
+window.onload = () => {
   "use strict";
   let field = document.getElementById("field");
   let ball = document.getElementById("ball");
@@ -7,4 +7,4 @@ window.addEventListener("DOMContentLoaded", () => {
     Math.round(field.clientWidth / 2 - ball.offsetWidth / 2) + "px";
   ball.style.top =
     Math.round(field.clientHeight / 2 - ball.offsetHeight / 2) + "px";
-});
+};
