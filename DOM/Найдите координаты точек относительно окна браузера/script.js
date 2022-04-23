@@ -17,7 +17,7 @@ function fourCoords(elem) {
     triangle3: [
       coordinates.left + elem.clientLeft,
       coordinates.top + elem.clientTop,
-    ],git
+    ],
     triangle4: [
       coordinates.right - elem.clientLeft,
       coordinates.bottom - elem.clientTop,
