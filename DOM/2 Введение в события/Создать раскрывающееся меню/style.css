@@ -1,0 +1,30 @@
+.arrow {
+  font-size: 18px;
+}
+
+.down {
+  color: red;
+  display: none;
+}
+
+.right {
+  color: green;
+  display: none;
+}
+
+.active {
+  display: inline-block;
+}
+
+ul {
+  visibility: hidden;
+  font-size: 16px;
+  list-style-type: none;
+  margin: 0;
+  padding-left: 24px;
+}
+
+#label {
+  cursor: pointer;
+  font-size: 16px;
+}
