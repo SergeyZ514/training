@@ -4,10 +4,10 @@ document.addEventListener("DOMContentLoaded", function () {
   let container = document.querySelector("#container");
 
   container.addEventListener("click", function (event) {
-    console.log(event.target);
     if (event.target.classList.contains("remove-button")) {
-      event.target.parentElement.hidden = "true";
+      let pane = event.target.closest(".pane");
+      pane.hidden = "true";
     }
+    return;
   });
 });
-``;
