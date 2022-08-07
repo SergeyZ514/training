@@ -1,10 +1,21 @@
 "use strict";
-let user = {
-  name: "John",
+function Animal() {}
+
+Animal.prototype.speak = function () {
+  return this;
 };
 
-let admin = user;
+Animal.eat = function () {
+  return this;
+};
 
-user = null;
+let obj = new Animal();
+let speak = obj.speak;
+console.log(
+  speak(), // глобальный объект (нестрогий режим)
+);
 
-console.log(admin);
+let eat = Animal.eat;
+console.log(
+  eat(), // глобальный объект (нестрогий режим)
+);
